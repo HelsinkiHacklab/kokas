@@ -1,0 +1,248 @@
+harald@raspberrypi:~/repos/nfc_lock $ sudo ./build_package.sh 
++ '[' -e build ']'
++ rm -rf build
++ set -e
++ mkdir -p build/etc/init
++ mkdir -p build/opt/nfc_lock/bin
++ cd c
++ make gatekeeper
+Package libzmq was not found in the pkg-config search path.
+Perhaps you should add the directory containing `libzmq.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'libzmq' found
+Package libfreefare was not found in the pkg-config search path.
+Perhaps you should add the directory containing `libfreefare.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'libfreefare' found
+Package openssl was not found in the pkg-config search path.
+Perhaps you should add the directory containing `openssl.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'openssl' found
+Package libzmq was not found in the pkg-config search path.
+Perhaps you should add the directory containing `libzmq.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'libzmq' found
+Package libfreefare was not found in the pkg-config search path.
+Perhaps you should add the directory containing `libfreefare.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'libfreefare' found
+Package openssl was not found in the pkg-config search path.
+Perhaps you should add the directory containing `openssl.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'openssl' found
+gcc log.c keydiversification.c helpers.c smart_node_helpers.c smart_node_config.c dumb_node_config.c gatekeeper.c  -g -Wall -std=gnu99 -fstack-protector -g  -lrt  -pthread -g -o gatekeeper    
+In file included from keydiversification.c:4:
+keydiversification.h:10:10: fatal error: openssl/aes.h: No such file or directory
+   10 | #include <openssl/aes.h>
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+In file included from helpers.c:1:
+helpers.h:7:10: fatal error: freefare.h: No such file or directory
+    7 | #include <freefare.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+In file included from smart_node_helpers.c:1:
+smart_node_helpers.h:6:10: fatal error: freefare.h: No such file or directory
+    6 | #include <freefare.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+smart_node_config.c:3:1: warning: data definition has no type or storage class
+    3 | nfclock_acl_file_id = 0x0;
+      | ^~~~~~~~~~~~~~~~~~~
+smart_node_config.c:3:1: warning: type defaults to ‘int’ in declaration of ‘nfclock_acl_file_id’ [-Wimplicit-int]
+smart_node_config.c:3:1: error: conflicting type qualifiers for ‘nfclock_acl_file_id’
+In file included from smart_node_config.c:1:
+smart_node_config.h:6:22: note: previous declaration of ‘nfclock_acl_file_id’ was here
+    6 | extern const uint8_t nfclock_acl_file_id;
+      |                      ^~~~~~~~~~~~~~~~~~~
+smart_node_config.c:4:1: warning: data definition has no type or storage class
+    4 | nfclock_mid_file_id = 0x1;
+      | ^~~~~~~~~~~~~~~~~~~
+smart_node_config.c:4:1: warning: type defaults to ‘int’ in declaration of ‘nfclock_mid_file_id’ [-Wimplicit-int]
+smart_node_config.c:4:1: error: conflicting type qualifiers for ‘nfclock_mid_file_id’
+In file included from smart_node_config.c:1:
+smart_node_config.h:7:22: note: previous declaration of ‘nfclock_mid_file_id’ was here
+    7 | extern const uint8_t nfclock_mid_file_id;
+      |                      ^~~~~~~~~~~~~~~~~~~
+smart_node_config.c:5:1: warning: data definition has no type or storage class
+    5 | nfclock_acl_write_key_base = { 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED };
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+smart_node_config.c:5:1: warning: type defaults to ‘int’ in declaration of ‘nfclock_acl_write_key_base’ [-Wimplicit-int]
+smart_node_config.c:5:1: error: conflicting types for ‘nfclock_acl_write_key_base’
+In file included from smart_node_config.c:1:
+smart_node_config.h:8:22: note: previous declaration of ‘nfclock_acl_write_key_base’ was here
+    8 | extern const uint8_t nfclock_acl_write_key_base[16];
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+smart_node_config.c:5:38: warning: excess elements in scalar initializer
+    5 | nfclock_acl_write_key_base = { 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED };
+      |                                      ^~~~
+smart_node_config.c:5:38: note: (near initialization for ‘nfclock_acl_write_key_base’)
+smart_node_config.c:5:44: warning: excess elements in scalar initializer
+    5 | nfclock_acl_write_key_base = { 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED };
+      |                                            ^~~~
+smart_node_config.c:5:44: note: (near initialization for ‘nfclock_acl_write_key_base’)
+smart_node_config.c:5:50: warning: excess elements in scalar initializer
+    5 | nfclock_acl_write_key_base = { 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED };
+      |                                                  ^~~~
+smart_node_config.c:5:50: note: (near initialization for ‘nfclock_acl_write_key_base’)
+smart_node_config.c:5:56: warning: excess elements in scalar initializer
+    5 | nfclock_acl_write_key_base = { 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED };
+      |                                                        ^~~~
+smart_node_config.c:5:56: note: (near initialization for ‘nfclock_acl_write_key_base’)
+smart_node_config.c:5:62: warning: excess elements in scalar initializer
+    5 | fclock_acl_write_key_base = { 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED };
+      |                                                             ^~~~
+
+smart_node_config.c:5:62: note: (near initialization for ‘nfclock_acl_write_key_base’)
+smart_node_config.c:5:68: warning: excess elements in scalar initializer
+    5 | _acl_write_key_base = { 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED };
+      |                                                             ^~~~
+
+smart_node_config.c:5:68: note: (near initialization for ‘nfclock_acl_write_key_base’)
+smart_node_config.c:5:74: warning: excess elements in scalar initializer
+    5 | rite_key_base = { 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED };
+      |                                                             ^~~~
+
+smart_node_config.c:5:74: note: (near initialization for ‘nfclock_acl_write_key_base’)
+smart_node_config.c:5:80: warning: excess elements in scalar initializer
+    5 | ey_base = { 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED };
+      |                                                             ^~~~
+
+smart_node_config.c:5:80: note: (near initialization for ‘nfclock_acl_write_key_base’)
+smart_node_config.c:5:86: warning: excess elements in scalar initializer
+    5 | e = { 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED };
+      |                                                             ^~~~
+
+smart_node_config.c:5:86: note: (near initialization for ‘nfclock_acl_write_key_base’)
+smart_node_config.c:5:92: warning: excess elements in scalar initializer
+    5 | 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED };
+      |                                                             ^~~~
+
+smart_node_config.c:5:92: note: (near initialization for ‘nfclock_acl_write_key_base’)
+smart_node_config.c:5:98: warning: excess elements in scalar initializer
+    5 | 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED };
+      |                                                             ^~~~
+
+smart_node_config.c:5:98: note: (near initialization for ‘nfclock_acl_write_key_base’)
+smart_node_config.c:5:104: warning: excess elements in scalar initializer
+    5 | 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED };
+      |                                                             ^~~~
+
+smart_node_config.c:5:104: note: (near initialization for ‘nfclock_acl_write_key_base’)
+smart_node_config.c:5:110: warning: excess elements in scalar initializer
+    5 | 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED };
+      |                                                             ^~~~
+
+smart_node_config.c:5:110: note: (near initialization for ‘nfclock_acl_write_key_base’)
+smart_node_config.c:5:116: warning: excess elements in scalar initializer
+    5 | 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED };
+      |                                                             ^~~~
+
+smart_node_config.c:5:116: note: (near initialization for ‘nfclock_acl_write_key_base’)
+smart_node_config.c:5:122: warning: excess elements in scalar initializer
+    5 | FE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED, 0xFE, 0xED, 0xDE, 0xED };
+      |                                                                 ^~~~
+
+smart_node_config.c:5:122: note: (near initialization for ‘nfclock_acl_write_key_base’)
+smart_node_config.c:6:1: warning: data definition has no type or storage class
+    6 | nfclock_acl_read_key_base = { 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE };
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~
+smart_node_config.c:6:1: warning: type defaults to ‘int’ in declaration of ‘nfclock_acl_read_key_base’ [-Wimplicit-int]
+smart_node_config.c:6:1: error: conflicting types for ‘nfclock_acl_read_key_base’
+In file included from smart_node_config.c:1:
+smart_node_config.h:9:22: note: previous declaration of ‘nfclock_acl_read_key_base’ was here
+    9 | extern const uint8_t nfclock_acl_read_key_base[16];
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~
+smart_node_config.c:6:37: warning: excess elements in scalar initializer
+    6 | nfclock_acl_read_key_base = { 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE };
+      |                                     ^~~~
+smart_node_config.c:6:37: note: (near initialization for ‘nfclock_acl_read_key_base’)
+smart_node_config.c:6:43: warning: excess elements in scalar initializer
+    6 | nfclock_acl_read_key_base = { 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE };
+      |                                           ^~~~
+smart_node_config.c:6:43: note: (near initialization for ‘nfclock_acl_read_key_base’)
+smart_node_config.c:6:49: warning: excess elements in scalar initializer
+    6 | nfclock_acl_read_key_base = { 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE };
+      |                                                 ^~~~
+smart_node_config.c:6:49: note: (near initialization for ‘nfclock_acl_read_key_base’)
+smart_node_config.c:6:55: warning: excess elements in scalar initializer
+    6 | nfclock_acl_read_key_base = { 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE };
+      |                                                       ^~~~
+smart_node_config.c:6:55: note: (near initialization for ‘nfclock_acl_read_key_base’)
+smart_node_config.c:6:61: warning: excess elements in scalar initializer
+    6 | nfclock_acl_read_key_base = { 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE };
+      |                                                             ^~~~
+smart_node_config.c:6:61: note: (near initialization for ‘nfclock_acl_read_key_base’)
+smart_node_config.c:6:67: warning: excess elements in scalar initializer
+    6 | k_acl_read_key_base = { 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE };
+      |                                                             ^~~~
+
+smart_node_config.c:6:67: note: (near initialization for ‘nfclock_acl_read_key_base’)
+smart_node_config.c:6:73: warning: excess elements in scalar initializer
+    6 | read_key_base = { 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE };
+      |                                                             ^~~~
+
+smart_node_config.c:6:73: note: (near initialization for ‘nfclock_acl_read_key_base’)
+smart_node_config.c:6:79: warning: excess elements in scalar initializer
+    6 | ey_base = { 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE };
+      |                                                             ^~~~
+
+smart_node_config.c:6:79: note: (near initialization for ‘nfclock_acl_read_key_base’)
+smart_node_config.c:6:85: warning: excess elements in scalar initializer
+    6 | e = { 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE };
+      |                                                             ^~~~
+
+smart_node_config.c:6:85: note: (near initialization for ‘nfclock_acl_read_key_base’)
+smart_node_config.c:6:91: warning: excess elements in scalar initializer
+    6 | 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE };
+      |                                                             ^~~~
+
+smart_node_config.c:6:91: note: (near initialization for ‘nfclock_acl_read_key_base’)
+smart_node_config.c:6:97: warning: excess elements in scalar initializer
+    6 | 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE };
+      |                                                             ^~~~
+
+smart_node_config.c:6:97: note: (near initialization for ‘nfclock_acl_read_key_base’)
+smart_node_config.c:6:103: warning: excess elements in scalar initializer
+    6 | 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE };
+      |                                                             ^~~~
+
+smart_node_config.c:6:103: note: (near initialization for ‘nfclock_acl_read_key_base’)
+smart_node_config.c:6:109: warning: excess elements in scalar initializer
+    6 | 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE };
+      |                                                             ^~~~
+
+smart_node_config.c:6:109: note: (near initialization for ‘nfclock_acl_read_key_base’)
+smart_node_config.c:6:115: warning: excess elements in scalar initializer
+    6 | 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE };
+      |                                                             ^~~~
+
+smart_node_config.c:6:115: note: (near initialization for ‘nfclock_acl_read_key_base’)
+smart_node_config.c:6:121: warning: excess elements in scalar initializer
+    6 | CA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE, 0xCA, 0xFF, 0xFE, 0xEE };
+      |                                                                 ^~~~
+
+smart_node_config.c:6:121: note: (near initialization for ‘nfclock_acl_read_key_base’)
+smart_node_config.c:7:1: warning: data definition has no type or storage class
+    7 | nfclock_acl_write_keyid = 0x03;
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+smart_node_config.c:7:1: warning: type defaults to ‘int’ in declaration of ‘nfclock_acl_write_keyid’ [-Wimplicit-int]
+smart_node_config.c:7:1: error: conflicting type qualifiers for ‘nfclock_acl_write_keyid’
+In file included from smart_node_config.c:1:
+smart_node_config.h:10:22: note: previous declaration of ‘nfclock_acl_write_keyid’ was here
+   10 | extern const uint8_t nfclock_acl_write_keyid;
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~
+smart_node_config.c:8:1: warning: data definition has no type or storage class
+    8 | nfclock_acl_read_keyid = 0x02;
+      | ^~~~~~~~~~~~~~~~~~~~~~
+smart_node_config.c:8:1: warning: type defaults to ‘int’ in declaration of ‘nfclock_acl_read_keyid’ [-Wimplicit-int]
+smart_node_config.c:8:1: error: conflicting type qualifiers for ‘nfclock_acl_read_keyid’
+In file included from smart_node_config.c:1:
+smart_node_config.h:11:22: note: previous declaration of ‘nfclock_acl_read_keyid’ was here
+   11 | extern const uint8_t nfclock_acl_read_keyid;
+      |                      ^~~~~~~~~~~~~~~~~~~~~~
+gatekeeper.c:15:10: fatal error: nfc/nfc.h: No such file or directory
+   15 | #include <nfc/nfc.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+make: *** [Makefile:80: gatekeeper] Error 1
